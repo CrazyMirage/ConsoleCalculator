@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleCalculator
 {
-    class Program
+    public class Calculator
     {
         static void Main(string[] args)
         {
@@ -25,7 +25,7 @@ namespace ConsoleCalculator
             Console.ReadLine();
         }
 
-        static double Calculate(string query)
+        public static double Calculate(string query)
         {
             Regex validationRegex = new Regex(@"([\s]*[-]?[\d]+[\s]*[+-\/*][\s]*[\d]+[\s]*)");
             if (!validationRegex.IsMatch(query))
@@ -53,7 +53,7 @@ namespace ConsoleCalculator
             return result;
         }
 
-        static Func<double,double,double> Operation(string operation)
+        public static Func<double,double,double> Operation(string operation)
         {
             switch (operation)
             {
